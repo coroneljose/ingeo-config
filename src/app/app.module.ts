@@ -11,7 +11,7 @@ import { MatFormFieldModule  } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatPaginatorModule, MatSortModule, MatTableModule } from '@angular/material';
 
 
 @NgModule({
@@ -28,7 +28,10 @@ import { MatInputModule } from '@angular/material';
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

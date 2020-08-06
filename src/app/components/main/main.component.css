@@ -11,14 +11,27 @@
 
 .accordion-headers-align .mat-expansion-panel-header-title,
 .accordion--headers-align .mat-expansion-panel-header-description {
-flex-basis: 0;
+    flex-basis: 0;
 }
 
 .accordion-headers-align .mat-expansion-panel-header-description {
-justify-content: space-between;
-align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .accordion-headers-align .mat-form-field + .mat-form-field {
-margin-left: 8px;
+    margin-left: 8px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td, th {
+    width: 25%;
 }
