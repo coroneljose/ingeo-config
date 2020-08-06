@@ -1,0 +1,81 @@
+<div class="main-div">
+
+  <div class="example-action-buttons">
+    <button mat-button (click)="updateAccordion()"> {{ textAccordionBtn }} </button>
+    <!-- <button mat-button (click)="accordion.closeAll()">Collapse All</button> -->
+  </div>
+
+  <mat-card class="main-card">
+    
+    
+    <!-- #docregion multi -->
+    <mat-accordion class="accordion-headers-align" multi>
+      <!-- #enddocregion multi -->
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Editar
+            </mat-panel-title>
+            <mat-panel-description>
+              ABM de datos
+              <mat-icon>create</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field>
+      <!--
+          <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput type="number" min="1">
+          </mat-form-field>-->
+
+           <mat-form-field>
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+          </mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+      
+        </mat-expansion-panel>
+
+      <!-- #docregion disabled -->
+        <mat-expansion-panel>
+      <!-- #enddocregion disabled -->
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Filtrar
+            </mat-panel-title>
+            <mat-panel-description>
+              Filtro de datos
+              <mat-icon>search</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <!-- <mat-form-field>
+            <mat-label>Country</mat-label>
+            <input matInput>
+          </mat-form-field> -->
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Detalle
+            </mat-panel-title>
+            <mat-panel-description>
+              &nbsp;
+              <!-- <mat-icon>table_rows</mat-icon> -->
+              <mat-icon>storage</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+
+
+  </mat-card>
+</div>
