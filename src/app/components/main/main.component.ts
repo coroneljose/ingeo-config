@@ -201,6 +201,10 @@ export class MainComponent implements OnInit {
     }
   }
 
+  alertFcn(text) {
+    alert(`Accion: ${text}`);
+  }
+
 }
 
 
