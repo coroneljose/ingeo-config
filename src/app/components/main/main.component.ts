@@ -202,3 +202,9 @@ export class MainComponent implements OnInit {
   }
 
 }
+
+
+// Ejemplo para agrupar filas por columna X
+// https://stackblitz.com/edit/angular-material-table-row-grouping
+// ver compatibilidad con ampliar descripcion de la fila... o bien como aislar el evento
+// https://stackblitz.com/edit/angular-mattable-with-collapsible-groupheader

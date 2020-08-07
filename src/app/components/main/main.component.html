@@ -94,6 +94,7 @@
             <mat-label>Filtro</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. AB123CD" #input>
           </mat-form-field>
+          <p *ngIf="dataSource.filteredData.length === 0" style="color: red;">No records found para el filtro "{{input.value}}"</p>
         </mat-expansion-panel>
       
         <!-- Seccion Detalle / Tabla -->
