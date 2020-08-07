@@ -12,6 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MatInputModule, MatPaginatorModule, MatSortModule, MatTableModule } from '@angular/material';
+import { MatStepperModule } from '@angular/material/stepper';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { MatInputModule, MatPaginatorModule, MatSortModule, MatTableModule } fro
     MatInputModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,23 +6,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
 import {animate, state, style, transition, trigger} from '@angular/animations';
-
-// export interface UserData {
-//   id: string;
-//   name: string;
-//   progress: string;
-//   color: string;
-// }
-
-// /** Constants used to fill up our data base. */
-// const COLORS: string[] = [
-//   'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-//   'aqua', 'blue', 'navy', 'black', 'gray'
-// ];
-// const NAMES: string[] = [
-//   'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-//   'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-// ];
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 export interface PeriodicElement {
   name: string;
@@ -161,6 +145,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class MainComponent implements OnInit {
 
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
   columnsToDisplay = ['name', 'weight', 'symbol', 'position', 'action'];
   expandedElement: PeriodicElement | null;
 
@@ -171,16 +158,26 @@ export class MainComponent implements OnInit {
 
   @ViewChild(MatAccordion) accordion: MatAccordion;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  // @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(ELEMENT_DATA);
   }
 
   ngOnInit() {
+
+    this.firstFormGroup = this.formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this.formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // this.dataSource.sort = this.sort;
   }
 
   updateAccordion() {
@@ -196,6 +193,7 @@ export class MainComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
+
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
